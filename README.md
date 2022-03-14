@@ -2,7 +2,7 @@
 
 Ejercicios realizado por: 
 
-Victor
+Victor Navarro Carrillo
 
 Gabriel Pelegri Riis 
 
