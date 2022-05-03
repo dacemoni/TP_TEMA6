@@ -22,6 +22,7 @@ public class Ejercicio4 {
                 }
             }
             movimiento(eleccion);
+
         }
 
     }
@@ -62,15 +63,14 @@ public class Ejercicio4 {
                     ovejas.set(a, "");
                 }
             }
-        }
-        if (ovejas.get(a).equals("<")) {
+        } else if (ovejas.get(a).equals("<")) {
             if (ovejas.get(a--).equals("")) {
                 ovejas.set(a--, "<");
                 ovejas.set(a, "");
             }
             if (ovejas.get(a--).equals(">") || ovejas.get(a++).equals("<")) {
-                if (ovejas.get(siguiente--).equals("")) {
-                    ovejas.set(siguiente--, "<");
+                if (ovejas.get(anterior--).equals("")) {
+                    ovejas.set(anterior--, "<");
                     ovejas.set(a, "");
                 }
             }
