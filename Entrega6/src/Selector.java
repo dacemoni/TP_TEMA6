@@ -20,16 +20,22 @@ public class Selector {
             }
             switch (eleccion) {
                 case 1:
-                    
+                    Ejercicio1.Lanzar(teclado);
+
                     break;
                 case 2:
-                   
+
                     break;
                 case 3:
+                    Ejercicio3.Lanzar(teclado);
                     break;
                 case 4:
+                    Ejercicio4.Lanzar(teclado);
                     break;
-                    case 5: System.exit(0);
+                case 5:
+                    break;
+                case 6:
+                    System.exit(0);
 
                 default:
                     break;

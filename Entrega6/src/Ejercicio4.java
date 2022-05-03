@@ -4,7 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio4 {
-    static ArrayList<String> ovejas;
+    public static ArrayList<String> ovejas;
 
     public static void Lanzar(Scanner teclado) {
         ovejas = new ArrayList<>();
@@ -52,7 +52,7 @@ public class Ejercicio4 {
     public static void movimiento(int a) {
         int siguiente = a++;
         int anterior = a--;
-        if (ovejas.get(a).equals(">")) {
+        if (ovejas.get(a)==">") {
             if (ovejas.get(a++).equals("")) {
                 ovejas.set(a++, ">");
                 ovejas.set(a, "");
