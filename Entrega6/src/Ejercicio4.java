@@ -53,23 +53,23 @@ public class Ejercicio4 {
         int siguiente = a++;
         int anterior = a--;
         if (ovejas.get(a)==">") {
-            if (ovejas.get(a++).equals("")) {
+            if (ovejas.get(a++)=="") {
                 ovejas.set(a++, ">");
                 ovejas.set(a, "");
             }
-            if (ovejas.get(a++).equals(">") || ovejas.get(a++).equals("<")) {
-                if (ovejas.get(siguiente++).equals("")) {
+            if (ovejas.get(a++)=="" || ovejas.get(a++)=="<") {
+                if (ovejas.get(siguiente++)=="") {
                     ovejas.set(siguiente++, ">");
                     ovejas.set(a, "");
                 }
             }
-        } else if (ovejas.get(a).equals("<")) {
-            if (ovejas.get(a--).equals("")) {
+        } else if (ovejas.get(a)=="<") {
+            if (ovejas.get(a--)=="") {
                 ovejas.set(a--, "<");
                 ovejas.set(a, "");
             }
-            if (ovejas.get(a--).equals(">") || ovejas.get(a++).equals("<")) {
-                if (ovejas.get(anterior--).equals("")) {
+            if (ovejas.get(a--)==">" || ovejas.get(a++)=="<") {
+                if (ovejas.get(anterior--)=="") {
                     ovejas.set(anterior--, "<");
                     ovejas.set(a, "");
                 }
