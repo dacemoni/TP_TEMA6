@@ -6,6 +6,7 @@ public class Selector {
     public static void Elegir(Scanner teclado) {
         int eleccion = 0;
         while (true) {
+        
             System.out.println("1: Ejercicio 1 (Número mayor)");
             System.out.println("2: Ejercicio 2 (Barcos II)");
             System.out.println("3: Ejercicio 3 (Tabla y funciones)");
