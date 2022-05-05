@@ -4,77 +4,24 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Ejercicio4 {
-    public static ArrayList<String> ovejas;
+    static ArrayList<Oveja> tabla;
 
     public static void Lanzar(Scanner teclado) {
-        ovejas = new ArrayList<>();
-        rellenarArray();
-        while (true) {
-            mostrarArray();
-            System.out.println("Elije que oveja mover");
-            int eleccion = -1;
-            while (eleccion > 6 || eleccion < 0) {
-                try {
-                    eleccion = teclado.nextInt();
-                } catch (InputMismatchException e) {
-                    System.out.println("Introduce un valor válido que esté dentro de los límites");
-                    teclado.next();
-                }
-            }
-            movimiento(eleccion);
-
-        }
-
+        tabla = new ArrayList<>();
+        iniciarTabla();
+        mostrarTabla();
     }
 
-    public static void rellenarArray() {
-        for (int i = 0; i < 7; i++) {
-            if (i < 3) {
-                ovejas.add(">");
-            } else if (i > 3) {
-                ovejas.add("<");
-            } else {
-                ovejas.add(3, "");
-            }
-
+    public static void iniciarTabla() {
+        for (int i = 0; i < 8; i++) {
+            tabla.add(i, new Oveja(i));
         }
+        tabla.remove(3);
     }
 
-    public static void mostrarArray() {
-        for (int i = 0; i < ovejas.size(); i++) {
-
-            System.out.print(" | " + ovejas.get(i));
-
+    public static void mostrarTabla() {
+        for (int i = 0; i < tabla.size(); i++) {
+            System.out.print("|" + tabla.get(i).getDireccion());
         }
-        System.out.print(" |");
-    }
-
-    public static void movimiento(int a) {
-        int siguiente = a++;
-        int anterior = a--;
-        if (ovejas.get(a)==">") {
-            if (ovejas.get(a++)=="") {
-                ovejas.set(a++, ">");
-                ovejas.set(a, "");
-            }
-            if (ovejas.get(a++)=="" || ovejas.get(a++)=="<") {
-                if (ovejas.get(siguiente++)=="") {
-                    ovejas.set(siguiente++, ">");
-                    ovejas.set(a, "");
-                }
-            }
-        } else if (ovejas.get(a)=="<") {
-            if (ovejas.get(a--)=="") {
-                ovejas.set(a--, "<");
-                ovejas.set(a, "");
-            }
-            if (ovejas.get(a--)==">" || ovejas.get(a++)=="<") {
-                if (ovejas.get(anterior--)=="") {
-                    ovejas.set(anterior--, "<");
-                    ovejas.set(a, "");
-                }
-            }
-        }
-
     }
 }
