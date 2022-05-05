@@ -8,16 +8,26 @@ public class Ejercicio3 {
 
     public static void Lanzar(Scanner teclado) {
         int maximo = 0;
+        int minimo = 0;
         while (true) {
-            System.out.println("Introduce un valor máximo");
+            System.out.println("Introduce un valor mínimo");
             try {
-                maximo = teclado.nextInt();
+                minimo = teclado.nextInt();
                 break;
             } catch (InputMismatchException r) {
                 teclado.next();
             }
         }
-        crearValores(maximo);
+        while (true) {
+            System.out.println("Introduce un valor maximo");
+            try {
+                maximo = teclado.nextInt()+1;
+                break;
+            } catch (InputMismatchException r) {
+                teclado.next();
+            }
+        }
+        crearValores(minimo, maximo);
         mostrarValores(lista);
     }
 
@@ -28,13 +38,18 @@ public class Ejercicio3 {
         System.out.println("\n");
     }
 
-    public static void crearValores(int maximo) {
+    public static void crearValores(int minimo, int maximo) {
 
         lista = new int[10];
         r = new Random();
+        int a = minimo - 1;
         for (int i = 0; i < lista.length; i++) {
-            lista[i] = r.nextInt(maximo);
-
+            while (a < minimo) {
+                a = r.nextInt(maximo);
+            }
+            lista[i] = a;
+            a = minimo - 1;
         }
+
     }
 }
