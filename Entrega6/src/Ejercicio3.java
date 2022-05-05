@@ -29,6 +29,7 @@ public class Ejercicio3 {
         }
         crearValores(minimo, maximo);
         mostrarValores(lista);
+        System.out.println("El mayor valor de la lista anterior es:" + valorMayor(lista));
     }
 
     public static void mostrarValores(int[] lista) {
@@ -51,5 +52,14 @@ public class Ejercicio3 {
             a = minimo - 1;
         }
 
+    }
+    public static int valorMayor(int[] lista){
+        int mayor = lista[0];
+        for (int i = 0; i < lista.length; i++) {
+            if (lista[i] > mayor) {
+                mayor = lista[i];
+            }
+        }
+        return mayor;
     }
 }
