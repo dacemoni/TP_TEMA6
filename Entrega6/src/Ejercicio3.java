@@ -21,7 +21,7 @@ public class Ejercicio3 {
         while (true) {
             System.out.println("Introduce un valor maximo");
             try {
-                maximo = teclado.nextInt()+1;
+                maximo = teclado.nextInt() + 1;
                 break;
             } catch (InputMismatchException r) {
                 teclado.next();
@@ -53,7 +53,8 @@ public class Ejercicio3 {
         }
 
     }
-    public static int valorMayor(int[] lista){
+
+    public static int valorMayor(int[] lista) {
         int mayor = lista[0];
         for (int i = 0; i < lista.length; i++) {
             if (lista[i] > mayor) {
