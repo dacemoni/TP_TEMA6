@@ -1,23 +1,40 @@
 public class Oveja {
-    int inicial;
-   private String direccion;
+    private String direccion;
+    private String simbolo;
+    private Oveja siguiente;
 
-    public Oveja(int inicial) {
-        this.inicial = inicial;
-        if (inicial < 3) {
-            direccion = ">";
-        } else if (inicial > 3) {
-            direccion = "<";
-        }else if(inicial == 3){
-            direccion ="";
+    public Oveja(String direccion) {
+        this.direccion = direccion;
+        if (direccion.equals("derecha")) {
+            this.simbolo = ">";
+        } else if (direccion.equals("izquierda")) {
+            this.simbolo = "<";
+        } else {
+            this.simbolo = " ";
         }
+        siguiente = null;
     }
 
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
+    public String getSimbolo() {
+        return simbolo;
     }
 
     public String getDireccion() {
         return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+        if (direccion.equals("derecha")) {
+            this.simbolo = ">";
+        } else if (direccion.equals("izquierda")) {
+            this.simbolo = "<";
+        } else {
+            this.simbolo = " ";
+        }
+    }
+
+    public void setSimbolo(String simbolo) {
+        this.simbolo = simbolo;
     }
 }
