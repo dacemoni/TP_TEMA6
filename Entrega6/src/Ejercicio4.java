@@ -10,11 +10,20 @@ public class Ejercicio4 {
         tabla = new ArrayList<>();
         iniciarTabla();
         mostrarTabla();
-        moverOveja(2);
-        mostrarTabla();
-        moverOveja(0);
-        mostrarTabla();
+        int opcion = 0;
+        while (opcion != -1) {
+            System.out.println("Elije que oveja mover (-1 para salir)");
+            try {
+                opcion = teclado.nextInt();
+                if (opcion >= 0 && opcion < 7) {
+                    moverOveja(opcion);
+                    mostrarTabla();
+                }
+            } catch (InputMismatchException e) {
+                teclado.next();
+            }
 
+        }
     }
 
     public static void iniciarTabla() {
@@ -39,6 +48,7 @@ public class Ejercicio4 {
             System.out.print(tabla.get(i).getSimbolo() + "|");
 
         }
+        System.out.print("\n 0 1 2 3 4 5 6");
         System.out.println("\n");
     }
 
@@ -50,11 +60,22 @@ public class Ejercicio4 {
             if (tabla.get(siguiente).getSimbolo().equals(" ")) {
                 tabla.get(siguiente).setDireccion("derecha");
                 oveja.setDireccion("nada");
-                
-            } else if (tabla.get(siguiente).getSimbolo().equals(">")
-                    && tabla.get(++siguiente).getSimbolo().equals(" ")) {
+
+            } else if (!tabla.get(siguiente).getSimbolo().equals(" ")
+                    && tabla.get(siguiente + 1).getSimbolo().equals(" ")) {
                 siguiente++;
                 tabla.get(siguiente).setDireccion("derecha");
+                oveja.setDireccion("nada");
+            }
+        } else if (oveja.getDireccion().equals("izquierda")) {
+            siguiente = posicion - 1;
+            if (tabla.get(siguiente).getSimbolo().equals(" ")) {
+                tabla.get(siguiente).setDireccion("izquierda");
+                oveja.setDireccion("nada");
+            } else if (!tabla.get(siguiente).getSimbolo().equals(" ")
+                    && tabla.get(siguiente - 1).getSimbolo().equals(" ")) {
+                siguiente--;
+                tabla.get(siguiente).setDireccion("izquierda");
                 oveja.setDireccion("nada");
             }
         }
