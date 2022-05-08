@@ -1,7 +1,7 @@
 public class Oveja {
     private String direccion;
     private String simbolo;
-    private Oveja siguiente;
+   
 
     public Oveja(String direccion) {
         this.direccion = direccion;
@@ -12,7 +12,7 @@ public class Oveja {
         } else {
             this.simbolo = " ";
         }
-        siguiente = null;
+        
     }
 
     public String getSimbolo() {
