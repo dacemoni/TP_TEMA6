@@ -15,6 +15,18 @@ public class Ejercicio2 {
 		Disparar(teclado);
 	}
 
+private static int introducirEnteroEntreLimites(Scanner teclado, int min, int max) {
+	int numero;
+	do {
+		System.out.println("introducir numero entre " + min + " y " + max);
+		numero = teclado.nextInt() -1;
+		
+		}while(numero < min || numero > max);
+		return numero;
+	}
+
+
+
 	public static void iniciarTabla() {
 		Random r = new Random();
 		i_obj = r.nextInt(4);
@@ -48,20 +60,21 @@ public class Ejercicio2 {
 
 	}
 
-	public static boolean IntroducirEnteroEntreLimites(int fila, int columna) {
+/*	public static boolean IntroducirEnteroEntreLimites(int fila, int columna) {
 		return fila >= 0 && fila <= 4 && columna >= 0 && columna <= 4;
-	}
+	}*/
 
 	public static void Disparar(Scanner teclado) {
 		do {
 			int columna = 0;
 			int fila = 0;
 
-			do {
+			//do {
 				while (true) {
 					try {
 						System.out.println("¿Qué fila?");
-						columna = teclado.nextInt() - 1;
+						//columna = teclado.nextInt() - 1;
+						columna = introducirEnteroEntreLimites(teclado, 0, 3);
 						break;
 					} catch (InputMismatchException r) {
 						teclado.next();
@@ -70,14 +83,15 @@ public class Ejercicio2 {
 				while (true) {
 					System.out.println("Que columna?");
 					try {
-						fila = teclado.nextInt() - 1;
+						//fila = teclado.nextInt() - 1;
+						fila = introducirEnteroEntreLimites(teclado, 0, 3);
 						break;
 					} catch (InputMismatchException r) {
 						teclado.next();
 					}
 				}
 
-			} while (!IntroducirEnteroEntreLimites(fila, columna));
+			//} while (!IntroducirEnteroEntreLimites(fila, columna));
 
 			if (columna != i_obj && fila != j_obj) {
 				tabla[columna][fila] = '~';
