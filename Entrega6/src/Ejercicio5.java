@@ -23,9 +23,9 @@ public class Ejercicio5 {
     }
     private static void dibujarTabla(){
         System.out.println(color + "*****************************");
-        for (int i = 0; i < columnasmax; i++) {
+        for (int i = 0; i < filasmax; i++) {
 
-			for (int j = 0; j < filasmax; j++) {
+			for (int j = 0; j < columnasmax; j++) {
 
 				System.out.printf(tabla[i][j] + "");
 
@@ -37,10 +37,10 @@ public class Ejercicio5 {
     }
 
     private static void iniciarTabla() {
-        tabla = new char[columnasmax][filasmax];
-		for (int i = 0; i < columnasmax; i++) {
+        tabla = new char[filasmax][columnasmax];
+		for (int i = 0; i < filasmax; i++) {
 
-			for (int j = 0; j < filasmax; j++) {
+			for (int j = 0; j < columnasmax; j++) {
 
 				tabla[i][j] = ' ';
 
