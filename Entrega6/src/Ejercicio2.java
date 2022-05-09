@@ -74,7 +74,7 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 					try {
 						System.out.println("¿Qué fila?");
 						//columna = teclado.nextInt() - 1;
-						columna = introducirEnteroEntreLimites(teclado, 0, 4);
+						columna = introducirEnteroEntreLimites(teclado, 0, 3);
 						break;
 					} catch (InputMismatchException r) {
 						teclado.next();
@@ -84,7 +84,7 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 					System.out.println("¿Que columna?");
 					try {
 						//fila = teclado.nextInt() - 1;
-						fila = introducirEnteroEntreLimites(teclado, 0, 4);
+						fila = introducirEnteroEntreLimites(teclado, 0, 3);
 						break;
 					} catch (InputMismatchException r) {
 						teclado.next();
