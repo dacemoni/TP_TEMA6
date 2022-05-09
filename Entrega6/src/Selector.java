@@ -26,7 +26,6 @@ public class Selector {
                     break;
                 case 2:
                     Ejercicio2.Lanzar(teclado);
-
                     break;
                 case 3:
                     Ejercicio3.Lanzar(teclado);

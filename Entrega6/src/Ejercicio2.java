@@ -49,7 +49,7 @@ public class Ejercicio2 {
 	}
 
 	public static boolean IntroducirEnteroEntreLimites(int fila, int columna) {
-		return fila >= 0 && fila < 4 && columna >= 0 && columna < 4;
+		return fila >= 0 && fila <= 4 && columna >= 0 && columna <= 4;
 	}
 
 	public static void Disparar(Scanner teclado) {
