@@ -13,14 +13,15 @@ public class Ejercicio2 {
 		
 		char[][] arr2d = new char[4][4];
 		
-		for(int i=0;i<4;i++) {
+		/*for(int i=0;i<4;i++) {
 			
 			for(int j=0;j<4;j++) {
 				
 				arr2d[i][j]='?';
 				
 				}
-			}
+			}*/
+			arr2d=initializarTablero(arr2d);
 		//System.out.println(Arrays.deepToString(arr2d));
 		Imprimirtabla(arr2d);
 		
@@ -59,4 +60,18 @@ private static void Imprimirtabla(char[][] arr2d)
 		}
 	
 }
+
+private static char[][] initializarTablero(char[][] arr2d) {
+
+	for(int i=0;i<4;i++) {
+			
+		for(int j=0;j<4;j++) {
+			
+			arr2d[i][j]='?';
+			
+			}
+		}
+	return arr2d;
+}
+
 }
