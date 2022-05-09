@@ -27,6 +27,7 @@ public class Ejercicio1 {
                     break;
                 case 3:
                     System.out.println("\n Saliendo... \n");
+                    break;
                 default:
                     System.out.println("Opción no válida");
                     break;
