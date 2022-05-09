@@ -47,6 +47,46 @@ public class Ejercicio5 {
 			}
 		}
     }
+    private static void selectorColor(Scanner teclado){
+        System.out.println("Seleccione color: ");
+        System.out.println("1. Rojo");
+        System.out.println("2. Verde");
+        System.out.println("3. Amarillo");
+        System.out.println("4. Azul");
+        System.out.println("5. Violeta");
+        System.out.println("6. Cyan");
+        System.out.println("7. Blanco");
+        System.out.println("8. Negro");
+        int opcion = teclado.nextInt();
+        switch (opcion) {
+            case 1:
+                color = TEXT_RED;
+                break;
+            case 2:
+                color = TEXT_GREEN;
+                break;
+            case 3:
+                color = TEXT_YELLOW;
+                break;
+            case 4:
+                color = TEXT_BLUE;
+                break;
+            case 5:
+                color = TEXT_PURPLE;
+                break;
+            case 6:
+                color = TEXT_CYAN;
+                break;
+            case 7:
+                color = TEXT_WHITE;
+                break;
+            case 8:
+                color = TEXT_BLACK;
+                break;
+
+        }
 
     
+    }//fin selector color
 }
+
