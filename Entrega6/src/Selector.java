@@ -34,6 +34,7 @@ public class Selector {
                     Ejercicio4.Lanzar(teclado);
                     break;
                 case 5:
+                    Ejercicio5.Lanzar(teclado);
                     break;
                 case 6:
                     System.exit(0);

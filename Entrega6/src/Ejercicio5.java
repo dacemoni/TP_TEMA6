@@ -16,6 +16,9 @@ public class Ejercicio5 {
     public static final String TEXT_WHITE = "\u001B[37m";
     public static String color = TEXT_RED;//color para probar
     public static void Lanzar(Scanner teclado){
+
+        iniciarTabla();
+        dibujarTabla();
         
     }
     private static void dibujarTabla(){
