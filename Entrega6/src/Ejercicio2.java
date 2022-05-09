@@ -46,6 +46,16 @@ public class Ejercicio2 {
 		
 	}
 
+private static int introducirEnteroEntreLimites(Scanner teclado, int min, int max) {
+	int numero;
+	do {
+		System.out.println("introducir numero entre " + min + " y " + max);
+		numero = teclado.nextInt() -1;
+		
+		}while(numero < min || numero > max);
+		return numero;
+	}
+
 private static void Imprimirtabla(char[][] arr2d)
 {
 	
