@@ -81,7 +81,7 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 					}
 				}
 				while (true) {
-					System.out.println("Que columna?");
+					System.out.println("¿Que columna?");
 					try {
 						//fila = teclado.nextInt() - 1;
 						fila = introducirEnteroEntreLimites(teclado, 0, 4);
