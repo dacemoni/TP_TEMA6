@@ -16,12 +16,15 @@ public class Ejercicio5 {
     public static final String TEXT_CYAN = "\u001B[36m";
     public static final String TEXT_WHITE = "\u001B[37m";
     public static String color = TEXT_RED;//color para probar
+
     public static void Lanzar(Scanner teclado){
 
         iniciarTabla();
         dibujarTabla();
+        SelectorEj5(teclado);
         
     }
+
     private static void dibujarTabla(){
         System.out.println(color + "*****************************");
         for (int i = 0; i < filasmax; i++) {
@@ -83,6 +86,68 @@ public class Ejercicio5 {
 
 
     }
+    private static void dibujarRectangulo(Scanner teclado) {
+        System.out.println("Escribe un caracter");
+        char caracter = teclado.next().charAt(0);
+        int columna;
+        int fila;
+        int columna2;
+        int fila2;
+        do {
+            while (true) {
+                try {
+                    System.out.println("¿Qué columna para empezar rectangulo?");
+                    columna = teclado.nextInt() - 1;
+
+                    break;
+                } catch (InputMismatchException r) {
+                    teclado.next();
+                }
+            }
+            while (true) {
+                System.out.println("¿Que fila para empezar rectangulo?");
+                try {
+                    fila = teclado.nextInt() - 1;
+
+                    break;
+                } catch (InputMismatchException r) {
+                    teclado.next();
+                }
+            }
+            while (true) {
+                try {
+                    System.out.println("¿Qué columna para terminar el rectangulo?");
+                    columna2 = teclado.nextInt() - 1;
+
+                    break;
+                } catch (InputMismatchException r) {
+                    teclado.next();
+                }
+            }
+            while (true) {
+                System.out.println("¿Que fila para terminar el rectangulo?");
+                try {
+                    fila2 = teclado.nextInt() - 1;
+
+                    break;
+                } catch (InputMismatchException r) {
+                    teclado.next();
+                }
+            }
+        } while (columna < 0 || columna > columnasmax || fila < 0 || fila > filasmax || columna2 < 0 || columna2 > columnasmax || fila2 < 0 || fila2 > filasmax);
+
+        for (int i = columna; i < columna2; i++) {
+
+			for (int j = fila; j < fila2; j++) {
+
+				tabla[i][j] = caracter;
+
+			}
+		}
+        dibujarTabla();
+        
+    }
+
     private static void selectorColor(Scanner teclado){
         System.out.println("Seleccione color: ");
         System.out.println("1. Rojo");
@@ -151,7 +216,7 @@ public class Ejercicio5 {
                     dibujarCaracter(teclado);
                     break;
                 case 4:
-                    Ejercicio4.Lanzar(teclado);
+                    dibujarRectangulo(teclado);
                     break;
                 case 5:
                     System.exit(0);
