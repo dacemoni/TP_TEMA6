@@ -29,6 +29,8 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 
 	public static void iniciarTabla() {
 		Random r = new Random();
+		//i_obj = r.nextInt(3)+1;
+		//j_obj = r.nextInt(3)+1;
 		i_obj = r.nextInt(4);
 		j_obj = r.nextInt(4);
 		columna = -1;
@@ -69,12 +71,11 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 			int columna = 0;
 			int fila = 0;
 
-			//do {
 				while (true) {
 					try {
 						System.out.println("¿Qué fila?");
 						//columna = teclado.nextInt() - 1;
-						columna = introducirEnteroEntreLimites(teclado, 0, 3);
+						columna = introducirEnteroEntreLimites(teclado, 0, 4);
 						break;
 					} catch (InputMismatchException r) {
 						teclado.next();
@@ -84,23 +85,24 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 					System.out.println("¿Que columna?");
 					try {
 						//fila = teclado.nextInt() - 1;
-						fila = introducirEnteroEntreLimites(teclado, 0, 3);
+						fila = introducirEnteroEntreLimites(teclado, 0, 4);
 						break;
 					} catch (InputMismatchException r) {
 						teclado.next();
 					}
 				}
 
-			//} while (!IntroducirEnteroEntreLimites(fila, columna));
 
-			if (columna != i_obj && fila != j_obj) {
+			if (columna != i_obj || fila != j_obj) {
 				tabla[columna][fila] = '~';
 				System.out.println("Agua");
 				Imprimirtabla();
 			}
 
-		} while (columna != i_obj && fila != j_obj);
+		} while (columna != i_obj || fila != j_obj);
 
+		tabla[columna][fila] = 'x';
+		Imprimirtabla();
 		System.out.println("Tocado y hundido");
 		System.out.println("Ha ganado");
 	}
