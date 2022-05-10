@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 //import java.awt.color.Color;
 
@@ -88,5 +89,42 @@ public class Ejercicio5 {
 
     
     }//fin selector color
+    public static void SelectorEj5(Scanner teclado) {
+        int eleccion = 0;
+        while (true) {
+
+            System.out.println("1: Dibujar tabla");
+            System.out.println("2: Cambiar color");
+            System.out.println("3: Dibujar un caracter");
+            System.out.println("4: Dibujar un rectangulo de caracteres");
+            System.out.println("5: Salir");
+
+            try {
+                eleccion = teclado.nextInt();
+            } catch (InputMismatchException e) {
+                teclado.next();
+            }
+            switch (eleccion) {
+                case 1:
+                    dibujarTabla();
+
+                    break;
+                case 2:
+                    selectorColor(teclado);
+                    break;
+                case 3:
+                    Ejercicio3.Lanzar(teclado);
+                    break;
+                case 4:
+                    Ejercicio4.Lanzar(teclado);
+                    break;
+                case 5:
+                    System.exit(0);
+
+                default:
+                    break;
+            }
+        }
+    }
 }
 
