@@ -68,6 +68,10 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 
 	public static void Disparar(Scanner teclado) {
 		do {
+			//debug
+			//System.out.println("i_obj: " + (i_obj+1));
+			//System.out.println("j_obj: " + (j_obj+1));
+			//fin debug
 			int columna = 0;
 			int fila = 0;
 
@@ -99,9 +103,16 @@ private static int introducirEnteroEntreLimites(Scanner teclado, int min, int ma
 				Imprimirtabla();
 			}
 
-		} while (columna != i_obj || fila != j_obj);
 
-		tabla[columna][fila] = 'x';
+		if(columna == i_obj && fila == j_obj) {
+			break;
+		}
+
+		} while (!(columna == i_obj && fila == j_obj));//porque no funciona!?
+
+		//System.out.println("Disparado a la posicion: " + (columna+1)+ "," + (fila+1));
+
+		tabla[i_obj][j_obj] = 'x';
 		Imprimirtabla();
 		System.out.println("Tocado y hundido");
 		System.out.println("Ha ganado");
